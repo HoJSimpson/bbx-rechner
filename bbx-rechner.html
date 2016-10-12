@@ -1,0 +1,92 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../vaadin-icons/vaadin-icons.html">
+<!--
+`bbx-rechner`
+a simple calculator
+
+@demo demo/index.html
+-->
+
+<dom-module id="bbx-rechner">
+  <template>
+    <style is ="custom-style">
+      :host {
+        display: block;
+      }
+
+    </style>
+  <style is="custom-style">
+  paper-icon-button.bluetype2 {
+    color: var(--paper-light-blue-500);
+    --paper-icon-button-ink-color: var(--paper-indigo-500);
+  }
+  paper-icon-button.bluetype2:hover {
+    background-color: var(--paper-light-blue-500);
+    color: white;
+  }
+  paper-icon-button.blue {
+    --paper-icon-button-ink-color: var(--paper-orange-500);
+    background-color: var(--paper-light-blue-500);
+    color: black;
+    border-radius: 3px;
+    padding: 2px;
+  }
+</style>
+    <h2>
+    <paper-input label="Erste Zahl" id="number1" on-value="" type="number"></paper-input>
+    <paper-input label="Zweite Zahl"id="number2" on-value="" type="number"></paper-input>
+    <paper-icon-button class="bluetype2" on-click="totalSum" icon="vaadin-icons:plus"></paper-icon-button><paper-icon-button class="bluetype2" on-click="totalSub" icon="vaadin-icons:minus"></paper-icon-button><paper-icon-button class="bluetype2" on-click="totalMul" icon="vaadin-icons:close"></paper-icon-button><paper-icon-button class="bluetype2" on-click="totalDiv" icon="vaadin-icons:book-percent"></paper-icon-button>
+    <paper-item label ="Ergebnis">{{ergebnis}}</paper-item>
+    </h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'bbx-rechner',
+      properties: {
+        /**Variable that stores the result of the mathematic operation, and is used
+            to prompt the result onscreen*/
+        ergebnis:{
+          type : Number,
+        }
+      },
+      /**Simple function to call data via querySelector and calculate the result and save it in ergebnis*/
+      totalSum : function(){
+                  var num1 = parseFloat(document.querySelector('#number1').value);
+                  var num2 = parseFloat(document.querySelector('#number2').value);
+
+                this.ergebnis = (num1 + num2);
+      },
+      /**Simple function to call data via querySelector and substract the 2 numbers and save it in ergebnis*/
+      totalSub : function(){
+                  var num1 = parseFloat(document.querySelector('#number1').value);
+                  var num2 = parseFloat(document.querySelector('#number2').value);
+
+                this.ergebnis = (num1 - num2);
+      },
+      /**Simple function to call data via querySelector and multiplicate the 2 Numbers and save it in ergebnis*/
+      totalMul : function(){
+                  var num1 = parseFloat(document.querySelector('#number1').value);
+                  var num2 = parseFloat(document.querySelector('#number2').value);
+
+                this.ergebnis = (num1 * num2);
+      },
+      /**Simple function to call data via querySelector and divide the 2 numbers and save it in ergebnis.To avoid
+      exeptions a if statement checks for Number "0" */
+      totalDiv : function(){
+        var num1 = parseFloat(document.querySelector('#number1').value);
+        var num2 = parseFloat(document.querySelector('#number2').value);
+        if (num2 == 0) {
+          this.ergebnis = "Division by Zero is prohibited"
+        } else {
+          this.ergebnis = (num1 / num2);
+        }
+
+      },
+    });
+  </script>
+</dom-module>
