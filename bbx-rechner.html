@@ -36,8 +36,8 @@ a simple calculator
   }
 </style>
     <h2>
-    <paper-input label="Erste Zahl" id="number1" on-value="" type="number"></paper-input>
-    <paper-input label="Zweite Zahl"id="number2" on-value="" type="number"></paper-input>
+    <paper-input label="Erste Zahl" id="number1" type="number"></paper-input>
+    <paper-input label="Zweite Zahl"id="number2" type="number"></paper-input>
     <paper-icon-button class="bluetype2" on-click="totalSum" icon="vaadin-icons:plus"></paper-icon-button><paper-icon-button class="bluetype2" on-click="totalSub" icon="vaadin-icons:minus"></paper-icon-button><paper-icon-button class="bluetype2" on-click="totalMul" icon="vaadin-icons:close"></paper-icon-button><paper-icon-button class="bluetype2" on-click="totalDiv" icon="vaadin-icons:book-percent"></paper-icon-button>
     <paper-item label ="Ergebnis">{{ergebnis}}</paper-item>
     </h2>
@@ -62,30 +62,30 @@ a simple calculator
       },
       /**Simple function to call data via querySelector and calculate the result and save it in ergebnis*/
       totalSum : function(){
-                  var num1 = parseFloat(document.querySelector('#number1').value);
-                  var num2 = parseFloat(document.querySelector('#number2').value);
+                  var num1 = parseFloat(document.getElementById("number1").value);
+                  var num2 = parseFloat(document.getElementById("number2").value);
 
                 this.ergebnis = (num1 + num2);
       },
       /**Simple function to call data via querySelector and substract the 2 numbers and save it in ergebnis*/
       totalSub : function(){
-                  var num1 = parseFloat(document.querySelector('#number1').value);
-                  var num2 = parseFloat(document.querySelector('#number2').value);
+                  var num1 = parseFloat(document.getElementById("number1").value);
+                  var num2 = parseFloat(document.getElementById("number2").value);
 
                 this.ergebnis = (num1 - num2);
       },
       /**Simple function to call data via querySelector and multiplicate the 2 Numbers and save it in ergebnis*/
       totalMul : function(){
-                  var num1 = parseFloat(document.querySelector('#number1').value);
-                  var num2 = parseFloat(document.querySelector('#number2').value);
+                  var num1 = parseFloat(document.getElementById("number1").value);
+                  var num2 = parseFloat(document.getElementById("number2").value);
 
                 this.ergebnis = (num1 * num2);
       },
       /**Simple function to call data via querySelector and divide the 2 numbers and save it in ergebnis.To avoid
       exeptions a if statement checks for Number "0" */
       totalDiv : function(){
-        var num1 = parseFloat(document.querySelector('#number1').value);
-        var num2 = parseFloat(document.querySelector('#number2').value);
+        var num1 = parseFloat(document.getElementById("number1").value);
+        var num2 = parseFloat(document.getElementById("number2").value);
         if (num2 == 0) {
           this.ergebnis = "Division by Zero is prohibited"
         } else {
