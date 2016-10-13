@@ -62,30 +62,30 @@ a simple calculator
       },
       /**Simple function to call data via querySelector and calculate the result and save it in ergebnis*/
       totalSum : function(){
-                  var num1 = parseFloat(document.getElementById("number1").value);
-                  var num2 = parseFloat(document.getElementById("number2").value);
+                  var num1 = parseFloat(this.$.number1.value);
+                  var num2 = parseFloat(this.$.number2.value);
 
                 this.ergebnis = (num1 + num2);
       },
       /**Simple function to call data via querySelector and substract the 2 numbers and save it in ergebnis*/
       totalSub : function(){
-                  var num1 = parseFloat(document.getElementById("number1").value);
-                  var num2 = parseFloat(document.getElementById("number2").value);
+                  var num1 = parseFloat(this.$.number1.value);
+                  var num2 = parseFloat(this.$.number2.value);
 
                 this.ergebnis = (num1 - num2);
       },
       /**Simple function to call data via querySelector and multiplicate the 2 Numbers and save it in ergebnis*/
       totalMul : function(){
-                  var num1 = parseFloat(document.getElementById("number1").value);
-                  var num2 = parseFloat(document.getElementById("number2").value);
+                  var num1 = parseFloat(this.$.number1.value);
+                  var num2 = parseFloat(this.$.number2.value);
 
                 this.ergebnis = (num1 * num2);
       },
       /**Simple function to call data via querySelector and divide the 2 numbers and save it in ergebnis.To avoid
       exeptions a if statement checks for Number "0" */
       totalDiv : function(){
-        var num1 = parseFloat(document.getElementById("number1").value);
-        var num2 = parseFloat(document.getElementById("number2").value);
+                  var num1 = parseFloat(this.$.number1.value);
+                  var num2 = parseFloat(this.$.number2.value);
         if (num2 == 0) {
           this.ergebnis = "Division by Zero is prohibited"
         } else {
