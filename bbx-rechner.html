@@ -39,10 +39,10 @@ a simple calculator
     <paper-input label="Erste Zahl" id="number1" type="number"></paper-input>
     <paper-input label="Zweite Zahl"id="number2" type="number"></paper-input>
     <div style="display: inline;">
-      <paper-icon-button class="bluetype2" on-click="totalSum" icon="vaadin-icons:plus"></paper-icon-button>
-      <paper-icon-button class="bluetype2" on-click="totalSub" icon="vaadin-icons:minus"></paper-icon-button>
-      <paper-icon-button class="bluetype2" on-click="totalMul" icon="vaadin-icons:close"></paper-icon-button>
-      <paper-icon-button class="bluetype2" on-click="totalDiv" icon="vaadin-icons:book-percent"></paper-icon-button>
+      <paper-icon-button class="bluetype2" on-tap="totalSum" icon="vaadin-icons:plus"></paper-icon-button>
+      <paper-icon-button class="bluetype2" on-tap="totalSub" icon="vaadin-icons:minus"></paper-icon-button>
+      <paper-icon-button class="bluetype2" on-tap="totalMul" icon="vaadin-icons:close"></paper-icon-button>
+      <paper-icon-button class="bluetype2" on-tap="totalDiv" icon="vaadin-icons:book-percent"></paper-icon-button>
     </div>
     <paper-item label ="Ergebnis">{{ergebnis}}</paper-item>
     </h2>
